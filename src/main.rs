@@ -19,8 +19,10 @@ fn main() {
         Err(msg) => panic!("[ERR] {msg}"),
     };
     match checker::check(&args.file_name.unwrap(), &args.hash.unwrap()) {
-        true => println!("ISO file is fine!"),
-        false => println!("ISO file is corrupted!"),
+        Ok(b) => { if b { println!("ISO is fine!") } else { println!("ISO is corruptd") }},
+        Err(e) => {
+            eprintln!("Failed to check ISO file integrety : {e}");
+        }
     }
 }
 
