@@ -1,4 +1,3 @@
-
 #![allow(unused)]
 use sha2::{Digest, Sha256};
 use std::fs::File;
@@ -15,6 +14,7 @@ fn hash_iso(file_path: &str) -> Result<String, std::io::Error> {
             break;
         }
         hasher.update(&buff[..bytes_read]);
+        buff.clear();
     }
     let hash_result = hasher.finalize();
     Ok(format!("{:x}", hash_result))
