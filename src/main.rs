@@ -16,23 +16,23 @@ fn main() {
         Ok(()) => {
             println!("[INFO] Arguments seem correct.");
         }
-        Err(msg) => panic!("[ERR] {msg}")
+        Err(msg) => panic!("[ERR] {msg}"),
     };
     match checker::check(&args.file_name.unwrap(), &args.hash.unwrap()) {
         true => println!("ISO file is fine!"),
-        false => println!("ISO file is corrupted!")
+        false => println!("ISO file is corrupted!"),
     }
 }
 
 fn validate_args(args: &Args) -> Result<(), &str> {
     if !args.file_name.is_some() {
         Err("ISO file argument (-f or --file) is required! Please specify an ISO file to check.")
-    }
-    else {
+    } else {
         if !args.hash.is_some() {
-            Err("Hash argument (-H or --hash) is required! please provide a hash to check against,   Get a hash from https://oreonproject.org")
-        }
-        else {
+            Err(
+                "Hash argument (-H or --hash) is required! please provide a hash to check against,   Get a hash from https://oreonproject.org",
+            )
+        } else {
             Ok(())
         }
     }
