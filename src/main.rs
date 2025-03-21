@@ -1,6 +1,6 @@
 #![allow(unused)]
 use clap::Parser;
-mod checker;
+use oreon_verify::checker;
 #[derive(Parser, Debug)]
 #[command[version = "1.0", long_about = None, about = "Verify the integrity of ISO files."]]
 struct Args {
@@ -23,7 +23,7 @@ fn main() {
             if b {
                 println!("ISO is fine!")
             } else {
-                println!("ISO is corruptd")
+                println!("ISO is corrupted!")
             }
         }
         Err(e) => {
