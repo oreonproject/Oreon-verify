@@ -31,4 +31,4 @@ ISO is corrupted!
 ```
 ## ⚠️ Errors
 * Missing arguments will trigger a panic with a message.
-* File or hash issues will print an error and ex
+* File or hash issues will print an error and exit.
