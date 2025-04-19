@@ -1,6 +1,6 @@
 # Oreon-verify
 A CLI tool used to check the integrity of Oreon ISOs
-📦 Installation
+## 📦 Installation
 Clone the repository and build it with Cargo:
 ```bash
 git clone https://github.com/oreonproject/Oreon-verify
